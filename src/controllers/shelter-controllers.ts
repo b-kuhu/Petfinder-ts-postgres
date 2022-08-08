@@ -23,9 +23,9 @@ export const createShelter = async (req: Request, res: Response) => {
     const {animal_id,room_no,date_of_arrival,date_of_adoption,adopted_by_id} = req.body;
     const response = await pool.query('INSERT INTO shelter (animal_id,room_no,date_of_arrival,date_of_adoption,adopted_by_id) VALUES ($1, $2,$3,$4,$5)', [animal_id,room_no,date_of_arrival,date_of_adoption,adopted_by_id]);
     res.json({
-        message: 'Animal Added successfully',
+        message: 'Details Added successfully',
         body: {
-            Animals: { animal_id,room_no,date_of_arrival,date_of_adoption,adopted_by_id}
+            shelter: { animal_id,room_no,date_of_arrival,date_of_adoption,adopted_by_id}
         }
     })
 };
