@@ -1,19 +1,13 @@
-import express, { Application,Response,Request} from 'express';
+import express, { Application} from 'express';
+import indexRoutes from './routes/index';
 const app: Application = express();
-
 
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 // Routes
-app.get('/',(req:Request,res:Response) =>{
-try {
-    return res.send('hello world');
-} catch (error) {
-    console.log(error)
-}
-});
+app.use(indexRoutes);
 
 app.listen(3000);
 console.log('Listening to the server on port', 3000);
