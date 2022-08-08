@@ -24,7 +24,7 @@ export const getOwnerById = async(req:Request,res:Response): Promise<Response> =
 
 export const createOwner = async(req:Request,res:Response)=>{
     const {owner_name,contact,address} = req.body;
-    const response = await pool.query('INSERT INTO owners (name, contact, address) VALUES ($1, $2, $3)', [owner_name,contact,address]);
+    const response = await pool.query('INSERT INTO owners (owner_name, contact, address) VALUES ($1, $2, $3)', [owner_name,contact,address]);
     res.json({
         message: 'Owner Added successfully',
         body: {
