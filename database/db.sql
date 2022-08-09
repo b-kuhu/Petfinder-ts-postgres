@@ -73,3 +73,4 @@ CREATE TABLE shelter(
        (105,305,'17-9-21','25-1-22',405);
        
 SELECT * FROM shelter;  
+
