@@ -2,29 +2,29 @@ import {Router} from 'express';
 const router = Router();
 
 
-import { getAnimal, getAnimalById, createAnimal, updateAnimal, deleteAnimal } from '../controllers/animal-controllers';
-import {getOwners,getOwnerById,createOwner,updateOwner,deleteOwner} from '../controllers/owner-controllers';
-import {getShelter,getShelterById,createShelter,updateShelter,deleteShelter} from '../controllers/shelter-controllers';
+import {AnimalController} from '../controller/animal.controller';
+import {OwnerController} from '../controller/owner.controller';
+import {ShelterController} from '../controller/shelter.controller';
 
 //routes for animals
-router.get('/animals', getAnimal);
-router.get('/animals/:id', getAnimalById);
-router.post('/animals', createAnimal);
-router.put('/animals/:id', updateAnimal)
-router.delete('/animals/:id', deleteAnimal);
+router.get('/animals', AnimalController.getAnimal);
+router.get('/animals/:id', AnimalController.getAnimalById);
+router.post('/animals', AnimalController.createAnimal);
+router.put('/animals/:id', AnimalController.updateAnimal)
+router.delete('/animals/:id', AnimalController.deleteAnimal);
 
 //routes for owners
-router.get('/owners',getOwners);
-router.get('/owners/:id',getOwnerById);
-router.post('/owners',createOwner);
-router.put('/owners/:id',updateOwner);
-router.delete('/owners/:id',deleteOwner);
+router.get('/owners',OwnerController.getOwners);
+router.get('/owners/:id',OwnerController.getOwnerById);
+router.post('/owners',OwnerController.createOwner);
+router.put('/owners/:id',OwnerController.updateOwner);
+router.delete('/owners/:id',OwnerController.deleteOwner);
 
 //routes for shelter
-router.get('/shelter',getShelter);
-router.get('/shelter/:id',getShelterById);
-router.post('/shelter',createShelter);
-router.put('/shelter/:id',updateShelter);
-router.delete('/shelter/:id',deleteShelter);
+router.get('/shelter',ShelterController.getShelter);
+router.get('/shelter/:id',ShelterController.getShelterById);
+router.post('/shelter',ShelterController.createShelter);
+router.put('/shelter/:id',ShelterController.updateShelter);
+router.delete('/shelter/:id',ShelterController.deleteShelter);
 
 export default router;

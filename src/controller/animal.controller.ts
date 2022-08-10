@@ -1,6 +1,9 @@
-import { Request, Response } from 'express';
+ import { Request, Response } from 'express';
+ import { QueryResult } from 'pg';
+ export namespace AnimalController{
+   
 const client = require('../database');
-import { QueryResult } from 'pg';
+
 
 export const getAnimal = async (req: Request, res: Response): Promise<Response> => {
     try {
@@ -50,3 +53,4 @@ export const deleteAnimal = async (req: Request, res: Response) => {
     res.json(`User ${id} deleted Successfully`);
 };
 
+}

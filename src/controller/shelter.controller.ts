@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 const client = require('../database');
 import { QueryResult } from 'pg';
 
+export namespace ShelterController{
 export const getShelter = async (req: Request, res: Response): Promise<Response> => {
     try {
         const response: QueryResult = await
@@ -48,3 +49,4 @@ export const deleteShelter = async (req: Request, res: Response) => {
     res.json(`User ${id} deleted Successfully`);
 };
 
+}

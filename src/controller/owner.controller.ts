@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 const client = require('../database');
 import { QueryResult } from 'pg';
-
+export namespace OwnerController {
 
 export const getOwners = async(req:Request,res:Response): Promise<Response> =>{
     try {
@@ -52,3 +52,4 @@ export const deleteOwner = async (req: Request, res: Response) => {
     res.json(`Owner ${id} deleted Successfully`);
 };
 
+}

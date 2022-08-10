@@ -1,6 +1,6 @@
-
 var pg = require('pg');
-var connString = "postgres://postgres:Kuhub*28@localhost:5432/restapi";
+require('dotenv').config();
+var connString = process.env.DATABASE_URL;
 
 var client = new pg.Client(connString);
 client.connect((err:Error)=>{
